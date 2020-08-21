@@ -1,0 +1,12 @@
+1. controller层调用Service层调用不到
+    原因是：
+        1. SpringBoot启动类没有增加@ComponentScan注解
+        2. service层的实现类没有增加@Component注解
+
+2. 当MySQL数据库版本过高(8.0以上)，在连接数据库的时候显示【For compliance with existing applications not
+    using SSL the verifyServerCertificate property is set to 'false'.
+    You need either to explicitly disable SSL by setting useSSL=false,
+    or set useSSL=true and provide truststore for server certificate verification.】错误。
+    解决办法：
+        1. 将数据库版本降低为5.7版本
+        2. 数据库地址上设置为：useSSL=false
