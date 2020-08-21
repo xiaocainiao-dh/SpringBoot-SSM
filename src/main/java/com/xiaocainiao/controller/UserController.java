@@ -26,6 +26,7 @@ public class UserController {
     @ResponseBody
     @GetMapping("/user/{id}")
     public User getUser(@PathVariable(value = "id") Integer id){
+        System.out.println("测试代码提交");
         return  userService.getUserById(id);
     }
 
