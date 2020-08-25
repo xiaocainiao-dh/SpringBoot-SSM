@@ -1,5 +1,6 @@
 package com.xiaocainiao.demo;
 
+import com.xiaocainiao.controller.SSHController;
 import com.xiaocainiao.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,8 +15,11 @@ public class CommentTest {
     @Autowired
     private UserService userService;
 
-    @Test
-    public void test(){
+    @Autowired
+    private SSHController sshController;
 
+    @Test
+    public void test() throws Exception {
+//        sshController.hservice();
     }
 }

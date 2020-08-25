@@ -22,6 +22,21 @@ spring:
     maxPoolPreparedStatementPerConnectionSize: 20
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+  #配置freemarker
+  freemarker:
+    allow-request-override: false
+    cache: true
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html;
+    suffix: .ftl
+    template-loader-path: classpath:/templates/
+  mvc:
+    static-path-pattern: /static/**
+  resources:
+    static-locations: classpath:/static/
+
+
 mybatis:
   # 指定全局配置文件位置
   config-location: classpath:mybatis/mybatis-config.xml
@@ -30,7 +45,9 @@ mybatis:
 #  configuration:
 #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
-# 打印mybatis执行的SQL讵
+# 打印mybatis执行的SQL句
 logging:
   level:
     com.xiaocainiao.mapper: debug
+
+
