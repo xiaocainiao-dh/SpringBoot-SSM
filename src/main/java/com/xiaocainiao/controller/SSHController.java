@@ -30,7 +30,8 @@ public class SSHController {
         StringBuffer tempMsg = new StringBuffer();
 
         // 文件的指定值（随机生成）
-        String printVal = "abc123";
+        long curVal = System.currentTimeMillis();
+        String printVal = String.valueOf(curVal);
 
         // 脚本存放位置(可放于用于监控文件夹中，可设置多个文件夹每个文件夹用";"隔开)
         String remoteFile = null;
@@ -170,7 +171,7 @@ public class SSHController {
         response.setCharacterEncoding("UTF-8");
         PrintWriter pw;
         try {
-            if ((!tempMsg.toString().equals(resultMsg.toString())) && "1".equals(retu)) {
+            if ((!tempMsg.toString().equals(resultMsg.toString())) && "1".equals(retu) && "".equals(resultMsgErr.toString())) {
                 retu = "读写文件失败";
                 // TODO log
                 System.out.println("resultMsgErr：" + resultMsgErr);
