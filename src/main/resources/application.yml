@@ -35,6 +35,9 @@ spring:
     static-path-pattern: /static/**
   resources:
     static-locations: classpath:/static/
+  redis:
+    host: 192.168.160.129
+    port: 6379
 
 
 mybatis:
@@ -49,5 +52,6 @@ mybatis:
 logging:
   level:
     com.xiaocainiao.mapper: debug
+
 
 
